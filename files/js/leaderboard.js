@@ -30,8 +30,9 @@ function showResults () {
 			 	var table = document.getElementById('success');
 			 	var sn = i + 1;
 			 	var user = index.name;
+			 	var username = index.username
 			 	var score = index.score;
-			 	table.insertAdjacentHTML('beforeend', `<tr><td>${sn}</td><td>${user}</td><td>${score}</td></tr>`);
+			 	table.insertAdjacentHTML('beforeend', `<tr><td>${sn}</td><td>${user}</td><td>${username}</td><td>${score}</td></tr>`);
 		    }
 		}
 		else{
@@ -42,3 +43,20 @@ function showResults () {
 	xttp.setRequestHeader('x-auth', xAuth);
 	xttp.send();
 }
+
+// database part 
+
+const firebase = require("firebase/firestore");
+
+// Initialize Cloud Firestore through Firebase
+firebase.initializeApp({
+  apiKey: '### FIREBASE API KEY ###',
+  authDomain: '### FIREBASE AUTH DOMAIN ###',
+  projectId: '### CLOUD FIRESTORE PROJECT ID ###'
+});
+
+var db = firebase.firestore();
+
+db.collection('users').get().then((querySnapshot) => {
+	querySnapshot.forEach();
+});

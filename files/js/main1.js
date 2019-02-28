@@ -78,3 +78,34 @@ function showTwo (ide) {
 	xttp.setRequestHeader('x-auth', xAuth);
 	xttp.send();
 }
+
+// ajax part 3
+
+document.getElementById('formed').onsubmit = function save (e) {
+	e.preventDefault();
+	var ide = document.getElementById('mi').value;
+	var xttp = new XMLHttpRequest();
+	xttp.open('POST', url + '/' + ide + '/edit', true);
+	var obj = {
+		id : document.getElementById('mi').value,
+		mission_name : document.getElementById('mn').value,
+		story : document.getElementById('st').value,
+		description : document.getElementById('de').value,
+		answer : document.getElementById('an').value,
+		geocode : document.getElementById('lt').value + ' ' + document.getElementById('lg').value
+	}
+	console.log(obj);
+	xttp.onreadystatechange = function (){
+		if(this.readyState === 4 && this.status === 200){
+			var data = JSON.parse(this.responseText);
+			console.log(data);
+			location.reload();
+			
+		}else{
+			console.log(this.status);
+		}
+	};
+	xttp.setRequestHeader('Content-type', 'application/json');
+	xttp.setRequestHeader('x-auth', xAuth);
+	xttp.send(JSON.stringify(obj));
+};

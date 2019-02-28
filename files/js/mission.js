@@ -42,6 +42,7 @@ document.getElementById('form').onsubmit = function  (e) {
 	xttp.onreadystatechange = function () {
 		if(this.readyState == 4 && this.status == 200){
 			console.log(this.responseText);
+			alert('your credentials were submitted successfully');
 		}
 		else{
 			console.log(this.status);
