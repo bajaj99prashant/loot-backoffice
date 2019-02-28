@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <!-- custom css -->
+    <link rel="stylesheet" type="text/css" href="css/loot1.css">
+
+    <!-- font awesome icons cdn -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>Loot Dashboard</title>
+  </head>
+  <body>
+
+    <div id="sidebar">
+      <div class="toggle-button" onclick="toggleSidebar()">
+        <span class="icon"><i class="fa fa-bars"></i></span>
+      </div>
+
+      <ul id="sidebar-options">
+        <li><a href="file:///home/prashant-bajaj/ncs/loot%20dashboard/home_page.html">Online</a></li>
+        <li><a href="file:///home/prashant-bajaj/ncs/loot%20dashboard/loot2.html">Users</a></li>
+        <li><a href="file:///home/prashant-bajaj/ncs/loot%20dashboard/mission.html">Addmission</a></li>
+        <li><a href="#">Missions</a></li>
+        <li><a href="file:///home/prashant-bajaj/ncs/loot%20dashboard/leaderboard.html">Leaderboard</a></li>
+      </ul>
+    </div>
+
+    <div id="wrapper" class="table-responsive">
+      <h2 class="text-center">Missions</h2>
+      <table class="table table-bordered text-center">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody id="table-info"></tbody>
+      </table>
+    </div>
+
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          
+
+        <div id="form-menu" class="pt-4 pb-4 mb-5">
+          <h3 id="main-head" class="text-center"><i class="fa fa-user"></i>&nbsp;Mission</h3>
+          <form>
+            <div class="form-element">
+              <span class="icons-a p-2"><i class="fa fa-id-badge"></i></span>&nbsp;&nbsp;<input type="text" placeholder="Mission ID" id="mi">
+            </div>
+
+            <div class="form-element">
+              <span class="icons-a "><i class="fa fa-user-circle"></i></span>&nbsp;&nbsp;<input type="text" placeholder="Mission Name" id="mn">
+            </div>
+
+            <div class="form-element">
+              <span class="icons-a pb-3"><i class="fa fa-book"></i></span>&nbsp;&nbsp;<textarea rows="1" cols="25" placeholder="Enter Your Story Here.." id="st"></textarea>
+            </div>
+
+            <div class="form-element">
+              <span class="icons-a pb-3"><i class="fa fa-keyboard"></i></span>&nbsp;&nbsp;<textarea rows="1" cols="25" placeholder="Enter description Here....." id="de"></textarea>
+            </div>
+
+            <div class="form-element" id="geocode">
+              <span class="icons-a mr-1"><i class="fa fa-globe"></i></span>&nbsp;&nbsp;<input type="text" placeholder="latitude" id="lt">&nbsp;&nbsp;<input type="text" placeholder="longitude" id="lg">
+            </div>
+
+            <div class="form-element">
+              <span class="icons-a"><i class="fa fa-edit"></i></span>&nbsp;&nbsp;<input type="text" placeholder="Your Answer" id="an">
+            </div>
+
+            
+          
+
+          <!-- Modal footer -->
+          <div class="modal-footer">
+            <span id="btn-group mx-auto"><button id="button" class="btn">edit</button><button id="button" class="btn">submit</button></span><button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+          </div>
+
+          </form> 
+        </div>
+        </div>
+       </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    <!-- custom js -->
+    <script type="text/javascript" src="js/main1.js"></script>
+  </body>
+</html>

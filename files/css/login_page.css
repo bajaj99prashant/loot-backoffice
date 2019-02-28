@@ -1,0 +1,56 @@
+body{
+	background-color: #253FE1;
+}
+
+.form-element {
+  width: 80%;
+  margin: 5vh 10%;
+  transition: all 200ms linear;
+}
+
+.form-element input {
+  width: 70%;
+  background-color: white;
+  border: 0px;
+  border-bottom: 1px solid black;
+}
+
+.icons-a {
+  width: 40%;
+}
+
+#form-menu {
+  width: 400px;
+  min-height: 50vh;
+  background-color: white;
+  display: block;
+  margin: auto;
+}
+
+#main-section {
+	padding-top: 13vh;
+}
+
+#button {
+  border: 2px solid #007bff;
+}
+
+.form-element input:focus {
+  border-bottom: 2px solid #007bff;
+}
+
+#error-message {
+  width: 60%;
+  color: red;
+  border: 2px solid red;
+  visibility: hidden;
+}
+
+#error-message.active {
+  visibility: visible;
+}
+
+#error-message.change {
+  color: green;
+  border: 2px solid green;
+}

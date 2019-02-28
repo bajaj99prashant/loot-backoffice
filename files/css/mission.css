@@ -1,0 +1,107 @@
+body{
+  background-color: #253FE1;
+}
+
+.icon {
+  font-size: 1.5em;
+  cursor: pointer;
+  color: white;
+}
+
+#sidebar {
+  width: 250px;
+  position: fixed;
+  height: 100vh;
+  left: -250px;
+  transition: all 700ms linear;
+  background-color: #fff;
+  z-index: 2;
+}
+
+#sidebar.active {
+  left: 0px;
+}
+
+.toggle-button {
+  position: absolute;
+  left: 280px;
+  top: 20px;
+  z-index: 2;
+}
+
+#sidebar-options {
+  list-style: none;
+}
+
+#sidebar-options a {
+  text-decoration: none;
+  font-size: 1.3em;
+  color: #253FE1;
+}
+
+#sidebar-options li {
+  margin: 5vh 0;
+}
+
+#wrapper {
+  width: 400px;
+  display: block;
+  margin: auto;
+  height: auto;
+  padding-top: 12vh;
+}
+
+#form-menu {
+  width: 400px;
+  min-height: 75vh;
+  background-color: white;
+  display: block;
+  margin: auto;
+}
+
+.form-element {
+  width: 80%;
+  margin: 5vh 10%;
+  border-bottom: 1px solid black;
+  transition: all 200ms linear;
+}
+
+.icons-a {
+  font-size: 1.8em;
+  width: 10%;
+}
+
+.form-element input {
+  width: 85%;
+  background-color: white;
+  border: 0px;
+}
+
+.form-element input::placeholder {
+  color: #00004c;
+}
+
+.form-element:target {
+  border-bottom: 2px solid #007bff;
+}
+
+textarea {
+  border: 0px;
+}
+
+textarea::placeholder {
+  color: #00004c;
+}
+
+#geocode input {
+  width: 40%;
+  border-bottom: 1px solid black;
+}
+
+#geocode {
+  border-bottom: 0px;
+}
+
+#button {
+  border: 2px solid #007bff;
+}
