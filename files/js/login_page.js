@@ -1,6 +1,6 @@
 window.onload = function () {
 	if(window.localStorage.getItem('x-auth')){
-		window.location.href = 'file:///home/prashant-bajaj/ncs/loot%20dashboard/home_page.html';
+		window.location.href = '/home_page.html';
 	}
 };
 

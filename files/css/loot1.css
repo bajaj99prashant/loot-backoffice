@@ -51,13 +51,19 @@ body{
   color: white;
 }
 
+#table-scroll{
+  display: block;
+  overflow-y: auto;
+  height: 60vh;
+}
+
 #wrapper h2 {
   font-weight: bold;
+  margin-bottom: 5vh;
 }
 
 #wrapper table {
   color: white;
-  margin-top: 5vh;
 }
 
 #wrapper a {

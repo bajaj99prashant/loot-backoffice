@@ -18,6 +18,12 @@ body{
   z-index: 2;
 }
 
+#table-scroll{
+  display: block;
+  overflow-y: auto;
+  height: 60vh;
+}
+
 #sidebar.active {
   left: 0px;
 }

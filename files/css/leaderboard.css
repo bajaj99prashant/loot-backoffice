@@ -51,6 +51,12 @@ body{
   z-index: 1;
 }
 
+#table-scroll{
+  display: block;
+  overflow-y: auto;
+  height: 60vh;
+}
+
 #main-table table {
   color: #fff;
 }
