@@ -31,7 +31,7 @@ document.getElementById('form').onsubmit = function (e){
 			errorBox.classList.add('active');
 			errorBox.classList.add('change');
 			errorList.insertAdjacentHTML('beforeend', '<li>Your credentials were sent successful</li>');
-			window.location.href = 'file:///home/prashant-bajaj/ncs/loot%20dashboard/home_page.html';
+			window.location.href = '../home_page.html';
 		}
 		else{
 			console.log(this.status);
