@@ -14,9 +14,13 @@
     <!-- font awesome icons cdn -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
+    <!-- favicon -->
+    <link rel="shortcut icon" href="images/icon_circle.ico" />
+
+
     <title>Loot Dashboard</title>
   </head>
-  <body onload="tableInfoOne()">
+  <body>
 
     <div id="sidebar">
       <div class="toggle-button" onclick="toggleSidebar()">
@@ -24,8 +28,9 @@
       </div>
 
       <ul id="sidebar-options">
-        <li><a href="#">Online</a></li>
-        <li><a href="/loot2.html">Users</a></li>
+        
+        <li><a href="/loot2.html">Online</a></li>
+        <li><a href="#">Users</a></li>
         <li><a href="/mission.html">Add Mission</a></li>
         <li><a href="/loot1.html">Missions</a></li>
         <li><a href="/leaderboard.html">Leaderboard</a></li>
@@ -34,13 +39,14 @@
 
     <div id="main-table" class="table-responsive">
 
-      <h2 class="text-center" id="main-head">Online Stats</h2>
+      <h2 class="text-center" id="main-head">Users</h2>
       <div id="table-scroll">
         <table class="table table-bordered">
           <thead>
             <tr>
               <th>SNo.</th>
               <th>Name</th>
+              <th>User Name</th>
               <th>Ad. no.</th>
               <th>Score</th>
               <th>Level</th>

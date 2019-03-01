@@ -1,3 +1,12 @@
+// authentication part
+window.onload = function () {
+	if(!window.localStorage.getItem('x-auth')){
+		window.location.href = "../index.html";
+	}
+	show();
+};
+
+// sidebar
 function toggleSidebar() {
 	var btn = document.getElementById("sidebar");
 	if(btn.classList.contains('active')){
@@ -10,20 +19,15 @@ function toggleSidebar() {
 
 // ajax part 
 
-var cors = 'https://cors-anywhere.herokuapp.com/';
-var url = `${cors}52.91.35.65:8080/api/missions`;
+var url = 'http://52.91.35.65:8080/api/missions';
 var table = document.getElementById('table-info');
 
-var xAuth = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJsb290MjAxOSIsImlhdCI6MTU0ODMxMzI2Mn0.VqN0AmH6URo8z_zPff68C81a8e5EUYPgOrwU18TvLMU';
-
-window.onload=show();
 function show() {
 	var info = new XMLHttpRequest();
 	info.open('GET', url, true);
 	info.onreadystatechange = function () {
 		if(this.readyState === 4 && this.status === 200){
 			var data = JSON.parse(this.responseText);
-			console.log(data);
 			renderHtml(data);
 		}
 		else{
@@ -31,7 +35,7 @@ function show() {
 		}
 	};
 	info.setRequestHeader('Content-type', 'application/json');
-	info.setRequestHeader('x-auth', xAuth);
+	info.setRequestHeader('x-auth', window.localStorage.getItem('x-auth'));
 	info.send();
 }
 
@@ -55,8 +59,6 @@ function showTwo (ide) {
 	xttp.onreadystatechange = () => {
 		if(xttp.readyState === 4 && xttp.status === 200){
 			var data = JSON.parse(xttp.responseText);
-			console.log(data);
-			console.log(data.id);
 			if(ide == data.id){
 				document.getElementById('mi').value = data.id;
 				document.getElementById('mn').value = data.mission_name;
@@ -75,7 +77,7 @@ function showTwo (ide) {
 		}
 	};
 	xttp.setRequestHeader('Content-type', 'application/json');
-	xttp.setRequestHeader('x-auth', xAuth);
+	xttp.setRequestHeader('x-auth', window.localStorage.getItem('x-auth'));
 	xttp.send();
 }
 
@@ -98,7 +100,6 @@ document.getElementById('formed').onsubmit = function save (e) {
 	xttp.onreadystatechange = function (){
 		if(this.readyState === 4 && this.status === 200){
 			var data = JSON.parse(this.responseText);
-			console.log(data);
 			location.reload();
 			
 		}else{
@@ -106,6 +107,6 @@ document.getElementById('formed').onsubmit = function save (e) {
 		}
 	};
 	xttp.setRequestHeader('Content-type', 'application/json');
-	xttp.setRequestHeader('x-auth', xAuth);
+	xttp.setRequestHeader('x-auth', window.localStorage.getItem('x-auth'));
 	xttp.send(JSON.stringify(obj));
 };

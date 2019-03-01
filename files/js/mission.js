@@ -1,3 +1,12 @@
+// authentication part
+window.onload = function () {
+	if(!window.localStorage.getItem('x-auth')){
+		window.location.href = "../index.html";
+	}
+	
+};
+
+// sidebar
 function toggleSidebar() {
 	var btn = document.getElementById("sidebar");
 	if(btn.classList.contains('active')){
@@ -11,10 +20,7 @@ function toggleSidebar() {
 
 	
 // ajax part
-var cors = 'https://cors-anywhere.herokuapp.com/';
-var url = `${cors}52.91.35.65:8080/api/missions`;
-
-var xAuth = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJsb290MjAxOSIsImlhdCI6MTU0ODMxMzI2Mn0.VqN0AmH6URo8z_zPff68C81a8e5EUYPgOrwU18TvLMU';
+var url = 'http://52.91.35.65:8080/api/missions';
 
 document.getElementById('form').onsubmit = function  (e) {
 	e.preventDefault();
@@ -41,7 +47,6 @@ document.getElementById('form').onsubmit = function  (e) {
     xttp.open('POST', url, true);
 	xttp.onreadystatechange = function () {
 		if(this.readyState == 4 && this.status == 200){
-			console.log(this.responseText);
 			alert('your credentials were submitted successfully');
 		}
 		else{
@@ -49,7 +54,7 @@ document.getElementById('form').onsubmit = function  (e) {
 		}
 	};
 	xttp.setRequestHeader('Content-type', 'application/json');
-	xttp.setRequestHeader('x-auth', xAuth);
+	xttp.setRequestHeader('x-auth', window.localStorage.getItem('x-auth'));
 	xttp.send(JSON.stringify(sendData));
 
 };

@@ -1,14 +1,13 @@
 window.onload = function () {
 	if(window.localStorage.getItem('x-auth')){
-		window.location.href = '/home_page.html';
+		window.location.href = '/loot2.html';
 	}
 };
 
 // ajax part
 var errorBox = document.getElementById('error-message');
 var errorList = document.getElementById('error-list');
-var cors = 'https://cors-anywhere.herokuapp.com/';
-var url = `${cors}52.91.35.65:8080/api/users/adminLogin`;
+var url = 'http://52.91.35.65:8080/api/users/adminLogin';
 
 document.getElementById('form').onsubmit = function (e){
 	e.preventDefault();
@@ -25,7 +24,6 @@ document.getElementById('form').onsubmit = function (e){
 	console.log(sendData);
 	xttp.onreadystatechange = function () {
 		if(this.readyState == 4 && this.status == 200){
-			console.log(this.status);
 			var x_auth = this.getResponseHeader('x-auth');
 			localStorage.setItem('x-auth', x_auth);
 			errorBox.classList.add('active');

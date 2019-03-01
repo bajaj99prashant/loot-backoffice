@@ -1,3 +1,12 @@
+// authentication part
+window.onload = function () {
+	if(!window.localStorage.getItem('x-auth')){
+		window.location.href = "../index.html";
+	}
+	showResults();
+};
+
+// sidebar
 function toggleSidebar() {
 	var btn = document.getElementById("sidebar");
 	if(btn.classList.contains('active')){
@@ -11,19 +20,16 @@ function toggleSidebar() {
 
 //ajax part
 
-var cors = 'https://cors-anywhere.herokuapp.com/';
-var url = `${cors}52.91.35.65:8080/api/users/leaderboard`;
-var xAuth = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiJsb290MjAxOSIsImlhdCI6MTU0ODMxMzI2Mn0.VqN0AmH6URo8z_zPff68C81a8e5EUYPgOrwU18TvLMU';
+var url = 'http://52.91.35.65:8080/api/users/leaderboard';
 
 
-window.onload = showResults();
+
 function showResults () {
 	var xttp = new XMLHttpRequest();
 	xttp.open('GET', url, true);
 	xttp.onreadystatechange = function () {
 		if(this.readyState === 4 && this.status === 200){
 			var data = JSON.parse(this.responseText);
-			console.log(data);
 		    var index = '';
 		    for(i = 0; i < data.length; i++){
 			 	index = data[i];
@@ -40,23 +46,6 @@ function showResults () {
 		}
 	};
 	xttp.setRequestHeader('Content-type', 'application/json');
-	xttp.setRequestHeader('x-auth', xAuth);
+	xttp.setRequestHeader('x-auth', window.localStorage.getItem('x-auth'));
 	xttp.send();
 }
-
-// database part 
-
-const firebase = require("firebase/firestore");
-
-// Initialize Cloud Firestore through Firebase
-firebase.initializeApp({
-  apiKey: '### FIREBASE API KEY ###',
-  authDomain: '### FIREBASE AUTH DOMAIN ###',
-  projectId: '### CLOUD FIRESTORE PROJECT ID ###'
-});
-
-var db = firebase.firestore();
-
-db.collection('users').get().then((querySnapshot) => {
-	querySnapshot.forEach();
-});
